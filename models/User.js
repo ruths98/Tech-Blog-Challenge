@@ -52,14 +52,15 @@ User.init(
         }
 
       }
-    }
-  },
-    {
-    sequelize,
-    timestamps: false,
-    freezeTableName: true,
-    underscored: true,
-    modelName: 'User',
-  }
+    },
+    
+      sequelize,
+      timestamps: false,
+      freezeTableName: true,
+      underscored: true,
+      modelName: 'User',
+    },
+  
+    
 )
 module.exports = User;

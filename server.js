@@ -15,10 +15,10 @@ const PORT = process.env.PORT || 3001;
 const hbs = exphbs.create({ helpers });
 
 const sess = {
-  secret: 'Super secret secret',
+  secret: 'exaHash',
   cookie: {
-    expires:10*60*1000,//10 minutes times 60 seconds times 1000 miliseconds in a second. change to 10 minutes of idle
-    // maxAge: 300000,
+    // expires:10*60*1000,//10 minutes times 60 seconds times 1000 miliseconds in a second. change to 10 minutes of idle
+    maxAge: 300000,
     httpOnly: true,
     secure: false,
     sameSite: 'strict',
