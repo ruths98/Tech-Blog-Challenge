@@ -1,6 +1,40 @@
 const router = require('express').Router();
-const { Project } = require('../../models');
+const { Post, User, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
+
+//for api/posts/
+router.get('/', (req,res) => {
+  Post.findAll({
+    attributes: [
+      'id','title','post_content'
+    ],
+    include: [
+      {
+        model: Comment,
+        attributes:[
+          'id','comment_text','post_id','user_id'
+        ],
+        include:{
+          model: User,
+          attributes:[
+            'username'
+          ]
+        }
+      },
+      {model: User,
+      attributes: [
+        'username'
+      ]
+    }
+    ]
+  })
+
+  .then(data)=> {res.json(data)}
+  .catch(err)=>{
+    console.log(err)
+    res.status(500).json(err)
+  }
+})
 
 router.post('/', withAuth, async (req, res) => {
   try {
