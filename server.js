@@ -42,6 +42,23 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
 
+//get routes
+app.get('/', (req, res) => {
+  res.render('home', { header: 'Tech Blog' })
+})
+
+app.get('/login', (req, res) => {
+  res.render('login', { header: 'Login' })
+})
+
+app.get('/post', (req, res) => {
+  res.render('post', { header: 'Post Details' })
+})
+
+app.get('/profile', (req, res) => {
+  res.render('profile', { header: 'Your Profile' })
+})
+
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });

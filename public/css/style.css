@@ -1,0 +1,35 @@
+body{
+background-color:rgb(192, 219, 192) ;
+}
+
+button{
+    all:unset;
+    color:rgb(192, 219, 192);
+}
+
+nav{
+    display:flex;
+    justify-content:left;
+   gap:3rem;
+    padding:10px;
+    
+}
+.headerBg{
+    background-color: rgb(34, 24, 7);
+/* how to get rid of margins??? */
+}
+
+.navBtns{
+    color:rgb(192, 219, 192);
+}
+.title{
+    color:rgb(34, 24, 7);
+    display:inline-flex;
+    padding:5px;
+    border-radius:5%;
+    background-color:rgb(192, 219, 192) ;
+    position: relative;
+    bottom:15px;
+    left:25px;
+    box-shadow: 2px 5px rgb(107, 132, 107);
+}
