@@ -29,11 +29,11 @@ router.get('/', (req,res) => {
     ]
   })
 
-  .then(data)=> {res.json(data)}
-  .catch(err)=>{
+  .then(data=> res.json(data))
+  .catch(err=>{
     console.log(err)
     res.status(500).json(err)
-  }
+  })
 })
 
 router.post('/', withAuth, async (req, res) => {

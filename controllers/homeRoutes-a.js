@@ -39,23 +39,39 @@ router.get('/', async (req, res) => {
 router.get('/post/:id', async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
-    include: [User, {
-      model: Comment,
-      include: [User],
-    }],
+      include: [
+        {
+          model: User,
+          attributes: ['name'],
+        },
+        {
+          model: Comment,
+          attributes: ['id', 'comment_text', 'post_id', 'user_id'],
+          include: {
+              model: User,
+              attributes: ['username']
+          }
+        }
+      ],
     })
-    if(postData){
-      const posts = postData.get({plain:true})
-      res.render('postID', {posts})
-    } else {res.status(403).end();
-    }
+    .then(
+      (data) => {
+      if(!data) {
+        res.status(404).json({message: 'shoot! Error with finding this post!'});
+        return;
+      }
+      const postData = data.get({ plain: true });
+      res.render('single-post', {
+        postData,
+        logged_in: req.session.logged_in
+      })
+   .catch (err => {
+      res.status(500).json(err);
+    })
   }
-  catch (err){
-    console.log("Error ", err)
-    res.json(err);
-  }
+  );
+} 
 })
-  
     
 router.get('/login',  (req,res) => {
   //redirect if already logged in

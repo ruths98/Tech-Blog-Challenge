@@ -1,7 +1,8 @@
 <div>
     {{posts.id}}
+    <p> postID example</p>
     <button class="comment">Comment</button>
-    {{#if loggedIn=true}}
+    {{#if logged_in:req.sessions.logged_in}}
     <button class="dltPost">Delete Post</button>
     {{/if}}
 </div>
