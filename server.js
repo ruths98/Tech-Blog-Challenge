@@ -55,6 +55,10 @@ app.get('/post', (req, res) => {
   res.render('post', { header: 'Post Details' })
 })
 
+app.get('/post/:id', (req,res) =>{
+  res.render('postID')
+})
+
 app.get('/profile', (req, res) => {
   res.render('profile', { header: 'Your Profile' })
 })
