@@ -1,8 +1,13 @@
 <div>
-    {{posts.id}}
-    <p> postID example</p>
+    {{#if posts.id}}
+   <section class="postFormat">
+    <h4 class="pageTitle">{{{posts.title}}}</h4>
+   <p class="pageContent" >{{{posts.post_content}}}</p>
+    <div class="postAuthor">{{{posts.user}}}</div>{{!-- Not going through yet --}}
+</section>
     <button class="comment">Comment</button>
     {{#if logged_in:req.sessions.logged_in}}
     <button class="dltPost">Delete Post</button>
+    {{/if}}
     {{/if}}
 </div>
