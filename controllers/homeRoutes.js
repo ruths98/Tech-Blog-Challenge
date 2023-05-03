@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
-
+//filepath is localhost:3001/home/
 router.get('/', async (req, res) => {
   try {
     const data = await Post.findAll({
