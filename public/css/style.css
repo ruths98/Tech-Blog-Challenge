@@ -14,6 +14,11 @@ nav{
     padding:10px;
     
 }
+
+.navBtns:hover{
+color:rgb(144, 193, 144);
+}
+
 .headerBg{
     background-color: rgb(34, 24, 7);
 /* how to get rid of margins??? */
@@ -32,4 +37,26 @@ nav{
     bottom:15px;
     left:25px;
     box-shadow: 2px 5px rgb(107, 132, 107);
+}
+
+.postFormat{
+    border:2px rgb(34, 24, 7) solid;
+    width:80%;
+    margin-left:30px;
+    margin-bottom:5px;
+}
+
+.pageTitle {
+    background-color: rgb(34, 24, 7);
+    color: rgb(192, 219, 192);
+    margin-top:0px;
+}
+
+.pageContent {
+    color:rgb(34, 24, 7);
+}
+
+.postAuthor{
+    color:rgb(192, 219, 192);
+    position:relative;
 }

@@ -1,7 +1,9 @@
 {{#each posts }}
-<div>{{{this.title}}}
-    {{{this.post_content}}}
-</div>
+<section class="postFormat">
+    <h4 class="pageTitle">{{{this.title}}}</h4>
+   <p class="pageContent" >{{{this.post_content}}}</p>
+    <div class="postAuthor">{{{this.user}}}</div>{{!-- Not going through yet --}}
+</section>
 {{/each}}
-
+{{!-- onclick="window.location.href'/home/post/:id" --}} to link to id
 <script src="/js/home.js"></script>
